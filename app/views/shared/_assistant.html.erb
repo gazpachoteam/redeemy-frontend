@@ -92,7 +92,7 @@
       },
       success: function(r){
         $("#chatHistory").animate({ scrollTop: $('#chatHistory').prop("scrollHeight")}, 300);
-        restext.text(r.answer);
+        restext.html(r.answer);
         $('#context').val(JSON.stringify(r.context))
       },
       error: function(r){
