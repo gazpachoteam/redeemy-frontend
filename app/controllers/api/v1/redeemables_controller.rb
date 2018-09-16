@@ -1,4 +1,5 @@
 class Api::V1::RedeemablesController < ApplicationController
+
   def index
     @redeemables = Redeemable.all
     render json: @redeemables

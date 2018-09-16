@@ -1,0 +1,8 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "global.scss";
+@import "variables.scss";
+@import "navbar";
+@import "masthead.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
