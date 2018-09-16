@@ -1,5 +1,10 @@
 <%= render "shared/navbar" %>
-<div class="container py-5 mt-5">
+<div class="container py-5 mt-5 ">
+  <div class="row py-3 ">
+  <div class="container text-center ">
+    <a href="<%= catalog_path %>" class="btn btn-dark btn-xl rounded-pill mt-3">Añade tu oferta</a>
+  </div>
+  </div>
 <div class="album py-5 bg-light">
   <div class="container">
 
@@ -13,9 +18,9 @@
             <p class="card-text"><%=redeemable.description%></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
               </div>
-              <small class="text-muted">9 mins</small>
+              <small class="text-muted">Disponible hasta: <%= redeemable.expiration%></small>
             </div>
           </div>
         </div>

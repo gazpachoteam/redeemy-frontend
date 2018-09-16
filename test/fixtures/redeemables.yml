@@ -11,10 +11,19 @@ redeemable_one:
   description: 'salvando ballenas'
   category: 'proyecto'
   provider_id: 1
+  expiration: 20-01-2019
 
 redeemable_two:
   id: 2
   name: 'Masaje espalda'
   description: 'Masaje unico con Spa Maria Luisa'
   category: 'experiencia'
-  provider_id: 2
+  expiration: 22-11-2018
+
+  redeemable_three:
+    id: 2
+    name: 'Seguro de salud Allianz'
+    description: 'Seguro de salud y plus de viaje'
+    category: 'servicio'
+    provider_id: 3
+    expiration: 22-12-2018

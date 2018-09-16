@@ -45,7 +45,7 @@ class Api::V1::RedeemablesController < ApplicationController
   private
 
   def redeemable_params
-    params.permit(:name, :description, :category)
+    params.permit(:name, :description, :category, :expiration)
   end
 
 end
