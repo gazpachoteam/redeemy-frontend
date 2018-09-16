@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
-      resources :customers, only: %i[index show]
+      resources :customers, only: %i[index show] do
+        post "/answers" => 'answers#get'
+      end
     end
+  end
+
+  resources :customers do
+    get "assistant", to: "helpdesk#index"
   end
 end
