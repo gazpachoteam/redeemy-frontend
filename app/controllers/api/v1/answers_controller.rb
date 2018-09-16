@@ -2,6 +2,11 @@ class Api::V1::AnswersController < ApplicationController
   before_action :set_user
 
   def get
+    assistant = AssistantV1.new(
+      username: ENV["IBM_USERNAME"],
+      password: ENV["IBM_PASSWORD"],
+      version: "2017-04-21"
+    )
 =begin
     lex_client = Aws::Lex::Client.new(
                     region: ENV["LEX_FAQ_AWS_REGION"],
@@ -16,11 +21,20 @@ class Api::V1::AnswersController < ApplicationController
       input_text: params[:text]
     })
 =end
-    sleep(3);
+  byebug
+  context = params[:context] == "" ? {} : JSON.parse(params[:context])
 
+  response = assistant.message(
+    workspace_id: ENV["IBM_WORKSPACE_ID"],
+    input: {
+      "text" => params[:text]
+    },
+    context: context
+  ).result
     render json: {
-      answer: "#{@user.name}, respuesta + #{params[:text]}",
+      answer: "#{@user.name}, respuesta + #{response["output"]["text"]}",
       dialog_action_type: "Close",
+      context: response["context"],
       fulfillment_state: "Fulfilled",
       status: 200
       } and return
