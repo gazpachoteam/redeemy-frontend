@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
       resources :redeemables
+      resources :providers
       resources :customers, only: %i[index show] do
         post "/answers" => 'answers#get'
       end
