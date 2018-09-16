@@ -6,12 +6,14 @@
 #
 
 redeemable_one:
+  id: 1
   name: 'Love Ballena'
   description: 'salvando ballenas'
   category: 'proyecto'
   provider_id: 1
 
 redeemable_two:
+  id: 2
   name: 'Masaje espalda'
   description: 'Masaje unico con Spa Maria Luisa'
   category: 'experiencia'

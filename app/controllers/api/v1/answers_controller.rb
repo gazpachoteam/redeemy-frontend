@@ -2,25 +2,42 @@ class Api::V1::AnswersController < ApplicationController
   before_action :set_user
 
   def get
-=begin
-    lex_client = Aws::Lex::Client.new(
-                    region: ENV["LEX_FAQ_AWS_REGION"],
-                    access_key_id: ENV["LEX_FAQ_AWS_ACCESS_ID"],
-                    secret_access_key: ENV["LEX_FAQ_AWS_SECRET_ACCESS_KEY"])
+    assistant = AssistantV1.new(
+      username: ENV["IBM_USERNAME"],
+      password: ENV["IBM_PASSWORD"],
+      version: "2017-04-21"
+    )
 
-    resp = lex_client.post_text({
-      bot_name: Lex::Bot::NAME,
-      bot_alias: Lex::Bot::VERSION,
-      user_id: params[:user_id],
-      session_attributes: {},
-      input_text: params[:text]
-    })
-=end
-    sleep(3);
+    context = params[:context] == "" ? {} : JSON.parse(params[:context])
+
+    response = assistant.message(
+      workspace_id: ENV["IBM_WORKSPACE_ID"],
+      input: {
+        "text" => params[:text]
+      },
+      context: context
+    ).result
+
+    answer = response["output"]["text"][0]
+
+    if context.key? "Cliente"
+      provider_redeemables_ids = @user.redeemables.map(&:id)
+
+      client_detail = CustomerDetail.where(name: params[:text]).first
+      customer = client_detail.customer
+      orders = Redemption.where(redeemable_id: provider_redeemables_ids, customer_id: customer.id)
+
+      orders_text = orders.map {|o| "id:#{o.id}: #{o.points} puntos redimidos por #{o.redeemable.name}"}.join("<br>")
+
+      answer = "Los últimos pedidos de #{customer.name} son:<br> #{orders_text}"
+
+      context = {}
+    end
 
     render json: {
-      answer: "#{@user.name}, respuesta + #{params[:text]}",
+      answer: "#{@user.name}, #{answer}",
       dialog_action_type: "Close",
+      context: response["context"],
       fulfillment_state: "Fulfilled",
       status: 200
       } and return

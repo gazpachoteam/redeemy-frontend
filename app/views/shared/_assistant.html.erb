@@ -19,6 +19,7 @@
     </div>
     <div class="input">
       <input type="text" name="text" id="inputText" placeholder="Ask your bot!" />
+      <input type="hidden" name="text" id="context" value="" />
     </div>
   </div>
   <input id="authenticity_token" name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -86,11 +87,13 @@
       data: {
         "user_id": userID(),
         "text": text,
-        "authenticity_token": at
+        "authenticity_token": at,
+        "context": $('#context').val()
       },
       success: function(r){
         $("#chatHistory").animate({ scrollTop: $('#chatHistory').prop("scrollHeight")}, 300);
-        restext.text(r.answer);
+        restext.html(r.answer);
+        $('#context').val(JSON.stringify(r.context))
       },
       error: function(r){
         restext.text(r.responseJSON.error);
