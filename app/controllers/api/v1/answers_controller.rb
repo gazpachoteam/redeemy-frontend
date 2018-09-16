@@ -1,5 +1,5 @@
 class Api::V1::AnswersController < ApplicationController
-  before_action :set_customer
+  before_action :set_user
 
   def get
 =begin
@@ -19,7 +19,7 @@ class Api::V1::AnswersController < ApplicationController
     sleep(3);
 
     render json: {
-      answer: "#{@customer.name}, respuesta + #{params[:text]}",
+      answer: "#{@user.name}, respuesta + #{params[:text]}",
       dialog_action_type: "Close",
       fulfillment_state: "Fulfilled",
       status: 200
@@ -37,7 +37,9 @@ class Api::V1::AnswersController < ApplicationController
 
   private
 
-  def set_customer
-    @customer = Customer.find(params[:customer_id])
+  def set_user
+    if params[:user_type] == "Provider"
+      @user = Provider.find(params[:user_id])
+    end
   end
 end
