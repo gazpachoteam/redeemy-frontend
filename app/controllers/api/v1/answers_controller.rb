@@ -8,17 +8,34 @@ class Api::V1::AnswersController < ApplicationController
       version: "2017-04-21"
     )
 
-  context = params[:context] == "" ? {} : JSON.parse(params[:context])
+    context = params[:context] == "" ? {} : JSON.parse(params[:context])
 
-  response = assistant.message(
-    workspace_id: ENV["IBM_WORKSPACE_ID"],
-    input: {
-      "text" => params[:text]
-    },
-    context: context
-  ).result
+    response = assistant.message(
+      workspace_id: ENV["IBM_WORKSPACE_ID"],
+      input: {
+        "text" => params[:text]
+      },
+      context: context
+    ).result
+
+    answer = response["output"]["text"][0]
+
+    if context.key? "Cliente"
+      provider_redeemables_ids = @user.redeemables.map(&:id)
+
+      client_detail = CustomerDetail.where(name: params[:text]).first
+      customer = client_detail.customer
+      orders = Redemption.where(redeemable_id: provider_redeemables_ids, customer_id: customer.id)
+
+      orders_text = orders.map {|o| "id:#{o.id}: #{o.points} puntos redimidos por #{o.redeemable.name}"}.join("<br>")
+
+      answer = "Los últimos pedidos de #{customer.name} son:<br> #{orders_text}"
+
+      context = {}
+    end
+
     render json: {
-      answer: "#{@user.name}, respuesta + #{response["output"]["text"]}",
+      answer: "#{@user.name}, #{answer}",
       dialog_action_type: "Close",
       context: response["context"],
       fulfillment_state: "Fulfilled",
