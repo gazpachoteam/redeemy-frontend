@@ -1,20 +1,19 @@
-<div class="container">
-
-  <div class="utContainer">
-    <h3>What can you talk about</h3>
+  <div class="row">
+  <div class="col-sm-4">
+    <h3>what can you talk about</h3>
     <div class="scrolly">
-      <% @utterances.each do |u| %>
+      <% utterances.each do |u| %>
         <div class='ut'><%= u %></div>
       <% end %>
     </div>
   </div>
 
-  <div class="chatContainer">
-    <div class="chatHistory" id="chatHistory" data-url="<%= api_v1_customer_answers_path(@customer) %>">
+  <div class="col-sm-7">
+    <div class="chatHistory" id="chatHistory" data-url="<%= api_v1_answers_path(user_type: user.class.name, user_id: user.id) %>">
 
       <div class="chatMessage">
         <img src="<%=image_url 'robot-design.png' %>" class="chatIcon" />
-        <%= @customer.name %>, ¿Como te puedo ayudar?
+        <%= user.name %>, ¿Como te puedo ayudar?
       </div>
 
     </div>
@@ -23,8 +22,6 @@
     </div>
   </div>
   <input id="authenticity_token" name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
-</div>
 
 <div id="clearLS">Clear LocalStorage UserID: <span id='userID'></span></div>
 
