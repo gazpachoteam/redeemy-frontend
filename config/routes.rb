@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :redeemables
       resources :providers
+      resources :redemptions
       resources :point_types, only: %i[index]
       resources :customers, only: %i[index show] do
         post "/answers" => 'answers#get'
