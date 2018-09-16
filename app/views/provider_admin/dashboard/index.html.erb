@@ -32,7 +32,12 @@
           </span>
         </a>
       </div>
-    </div
-
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-3 col-sm-6 mb-3">
+      <%= link_to "Export PDF report", dashboard_for_provider_path(@provider, format: "pdf"),  class: "btn btn-success" %>
+    </div>
+  </div>
   <%= render "shared/assistant", user: @provider, utterances: @utterances %>
 </div>
