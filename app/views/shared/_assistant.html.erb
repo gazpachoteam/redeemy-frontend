@@ -1,36 +1,32 @@
   <div class="row">
-  <div class="col-sm-4">
-    <h3>what can you talk about</h3>
-    <div class="scrolly">
-      <% utterances.each do |u| %>
-        <div class='ut'><%= u %></div>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="col-sm-7">
-    <div class="chatHistory" id="chatHistory" data-url="<%= api_v1_answers_path(user_type: user.class.name, user_id: user.id) %>">
-
-      <div class="chatMessage">
-        <img src="<%=image_url 'robot-design.png' %>" class="chatIcon" />
+  <div class="col-sm-7" id="live-chat">
+    <header class="clearfix">
+    <a href="#" class="chat-close">x</a>
+    <h4>John Doe</h4>
+    <span class="chat-message-counter">3</span>
+  </header>
+  <div class="chat">
+    <div class="chat-history" id="chatHistory" data-url="<%= api_v1_answers_path(user_type: user.class.name, user_id: user.id) %>">
+      <div class="chat-message clearfix">
+        <img src="<%=image_url 'robot-design.png' %>" class="chatIcon"  alt="" width="32" height="32"/>
         <%= user.name %>, ¿Como te puedo ayudar?
       </div>
 
     </div>
     <div class="input">
-      <input type="text" name="text" id="inputText" placeholder="Ask your bot!" />
-      <input type="hidden" name="text" id="context" value="" />
+
+        <input type="text" name="text" id="inputText" placeholder="Ask your bot!" style="margin-right: 0px; display: block;"/>
+
+        <input type="hidden" name="text" id="context" value="" />
+
     </div>
   </div>
   <input id="authenticity_token" name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
+</div>
 <div id="clearLS">Clear LocalStorage UserID: <span id='userID'></span></div>
 
-<div id="iconsCredit">Icons made by
-  <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
-  <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-  <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-</div>
+
 
 <script>
 
@@ -67,11 +63,11 @@
     var text = inputText.val();
     inputText.attr('disabled', true).addClass('inactive').val("").attr('placeholder', "loading..");
 
-    var template = '<div class="chatMessageUser"><span>'+text+'</span><img src="<%=image_url 'user.png' %>" class="chatIconUser" /></div>'
+    var template = '<div class="chat-messageUser"><span>'+text+'</span><img src="<%=image_url 'user.png' %>" class="chatIconUser" /></div>'
     $("#chatHistory").append(template);
 
     var resContainer = $("<div></div>");
-    resContainer.addClass("chatMessage");
+    resContainer.addClass("chat-message");
     resContainer.append('<img src="<%= image_url 'robot-design.png' %>" class="chatIcon" />');
     var restext = $("<span></span>");
     restext.html("...");
