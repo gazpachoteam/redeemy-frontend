@@ -1,3 +1,7 @@
-class Project < ApplicationRecord
-  belongs_to :provider
+class Project < Base
+  def self.routes
+    {
+      index: ['/projects', :get]
+    }
+  end
 end

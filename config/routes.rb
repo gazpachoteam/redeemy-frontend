@@ -1,19 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  root to: "pages#home"
-  get "catalog", to: "pages#catalog"
-
-  namespace :api, defaults: { format: "json" } do
-    namespace :v1 do
-      resources :projects
-      resources :providers
-      resources :redemptions
-      resources :point_types, only: %i[index]
-      resources :customers, only: %i[index show]
-
-      post "/answers" => 'answers#get'
-    end
-  end
 
   get 'dashboard', to: "dashboard/dashboard#index", as: "bank_dashboard"
   namespace :dashboard do
@@ -28,4 +13,7 @@ Rails.application.routes.draw do
       resources :projects, only: [:index]
     end
   end
+
+  get "catalog", to: "pages#catalog"
+  root to: "pages#home"
 end

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def catalog
-    @projects = Project.all
+    @response = Project.index(session)
+    @projects = @response.parsed_body
   end
 end

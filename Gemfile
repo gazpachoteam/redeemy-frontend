@@ -75,6 +75,8 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-heroku"
 gem "wkhtmltopdf-binary-edge"
 
+gem "typhoeus"
+
 group :production do
   gem 'pg'
 end
