@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
-      resources :redeemables
+      resources :projects
       resources :providers
       resources :redemptions
       resources :point_types, only: %i[index]
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :provider_admin do
     resources :providers do
       resources :redemptions, only: [:index]
-      resources :redeemables, only: [:index]
+      resources :projects, only: [:index]
     end
   end
 end

@@ -38,6 +38,6 @@ class Api::V1::RedemptionsController < ApplicationController
   end
 
   def redemption_params
-    params.permit(:customer_id, :redeemable_id, :points)
+    params.permit(:customer_id, :project_id, :points)
   end
 end
