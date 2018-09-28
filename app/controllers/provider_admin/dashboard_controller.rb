@@ -1,7 +1,9 @@
 class ProviderAdmin::DashboardController < ProviderAdminController
-  before_action :set_provider
 
   def index
+    @response = Provider.show(session, {}, params[:provider_id])
+    @provider = @response.parsed_body
+    
     @utterances = [
       "Consulta y haz seguimiento a tus ordenes",
       "Actualiza tu catálogo",
@@ -16,11 +18,5 @@ class ProviderAdmin::DashboardController < ProviderAdminController
                disposition: 'attachment'
       end
     end
-  end
-
-  private
-
-  def set_provider
-    @provider = Provider.find(params[:provider_id])
   end
 end

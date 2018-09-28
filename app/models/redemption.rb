@@ -1,4 +1,9 @@
-class Redemption < ApplicationRecord
-  belongs_to :customer
-  belongs_to :project
+class Redemption < Base
+
+  def self.routes
+    {
+      index: ['/providers/%d/redemptions', :get]
+    }
+  end
+
 end

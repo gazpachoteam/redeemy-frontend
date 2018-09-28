@@ -11,23 +11,23 @@
           <thead>
             <tr>
               <th>Cliente</th>
-              <th>Producto/Servicio</th>
+              <th>Proyectos</th>
               <th>Puntos</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
               <th>Cliente</th>
-              <th>Producto/Servicio</th>
+              <th>Proyecto</th>
               <th>Puntos</th>
             </tr>
           </tfoot>
           <tbody>
             <% @redemptions.each do |redemption| %>
               <tr>
-                <td><%= redemption.customer.name %></td>
-                <td><%= redemption.project.name %></td>
-                <td><%= redemption.points %></td>
+                <td><%= redemption["customer"]["name"] %></td>
+                <td><%= redemption["project"]["name"] %></td>
+                <td><%= redemption["points"] %></td>
               </tr>
             <% end %>
           </tbody>
