@@ -1,8 +1,7 @@
-class Provider < ApplicationRecord
-  has_many :projects, dependent: :destroy
-
-  def redemptions
-    projects_ids = projects.map(&:id)
-    Redemption.where(project_id: projects_ids)
+class Provider < Base
+  def self.routes
+    {
+      show: ['/providers/%d', :get]
+    }
   end
 end

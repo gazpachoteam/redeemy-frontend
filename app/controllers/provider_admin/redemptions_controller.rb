@@ -1,13 +1,12 @@
 class ProviderAdmin::RedemptionsController < ProviderAdminController
-  before_action :set_provider
 
   def index
-    @redemptions = @provider.redemptions
+    @response = Provider.show(session, {}, params[:provider_id])
+    @provider = @response.parsed_body
+    
+    @response = Redemption.index(session, {}, params[:provider_id])
+    @redemptions = @response.parsed_body
+
   end
 
-  private
-
-  def set_provider
-    @provider = Provider.find(params[:provider_id])
-  end
 end

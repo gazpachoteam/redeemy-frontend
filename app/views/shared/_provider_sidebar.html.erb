@@ -1,20 +1,20 @@
 <!-- Sidebar -->
 <ul class="sidebar navbar-nav">
   <li class="nav-item active">
-    <a class="nav-link" href="<%= dashboard_for_provider_path(@provider) %>">
+    <a class="nav-link" href="<%= dashboard_for_provider_path(@provider['id']) %>">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= provider_admin_provider_redemptions_path(@provider) %>">
+    <a class="nav-link" href="<%= provider_admin_provider_redemptions_path(@provider['id']) %>">
       <i class="fas fa-fw fa-file"></i>
-      <span>Ordenes</span>
+      <span>Rendenciones</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="<%= provider_admin_provider_projects_path(@provider) %>">
+    <a class="nav-link" href="<%= provider_admin_provider_projects_path(@provider['id']) %>">
       <i class="fas fa-fw fa-chart-area"></i>
-      <span>Productos/Servicios</span></a>
+      <span>Proyectos</span></a>
   </li>
 </ul>

@@ -1,13 +1,11 @@
 class ProviderAdmin::ProjectsController < ProviderAdminController
-  before_action :set_provider
 
   def index
-    @projects = @provider.projects
+    @response = Provider.show(session, {}, params[:provider_id])
+    @provider = @response.parsed_body
+
+    @response = Project.index(session, {}, params[:provider_id])
+    @projects = @response.parsed_body
   end
 
-  private
-
-  def set_provider
-    @provider = Provider.find(params[:provider_id])
-  end
 end
