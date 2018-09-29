@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :projects, only: [:index, :show]
+
   get "catalog", to: "pages#catalog"
   root to: "pages#home"
 end

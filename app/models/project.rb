@@ -1,7 +1,9 @@
 class Project < Base
   def self.routes
     {
-      index: ['/providers/%d/projects', :get]
+      provider_index: ['/providers/%d/projects', :get],
+      index: ['/projects', :get],
+      show: ['/projects/%d', :get]
     }
   end
 end
