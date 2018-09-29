@@ -1,5 +1,7 @@
 class Dashboard::ProvidersController < DashboardController
   def index
-    @providers = Provider.all
+    @response = Provider.index(session, {}, params[:provider_id])
+    @providers = @response.parsed_body
+    
   end
 end
