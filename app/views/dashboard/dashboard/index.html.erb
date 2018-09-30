@@ -18,7 +18,7 @@
     <div class="inlineChart">
       <canvas id="c2" width="100" height="100"></canvas>
       <div class="info">
-        <div class="value">36,146</div>
+        <div class="value"><%= @providers.length %></div>
         <div class="title"></div>
       </div>
     </div>
@@ -73,6 +73,5 @@
 </article>
 
 
-  <%= render "shared/assistant", user: @user, utterances: [] %>
 
 </div>

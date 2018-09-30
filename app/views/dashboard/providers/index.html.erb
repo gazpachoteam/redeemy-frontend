@@ -23,7 +23,7 @@
           <tbody>
             <% @providers.each do |provider| %>
               <tr>
-                <td><%= provider.name %></td>
+                <td><%= provider["name"]%></td>
                 <td>edit | delete </td>
               </tr>
             <% end %>
