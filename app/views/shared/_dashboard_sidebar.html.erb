@@ -8,16 +8,22 @@
   </li>
   <% if session[:current_role] == "OrgAdmin" %>
     <li class="nav-item">
-      <a class="nav-link" href="">
+      <a class="nav-link" href="<%= dashboard_projects_path %>">
         <i class="fas fa-fw fa-folder"></i>
         <span>Proyectos</span>
       </a>
     </li>
   <% elsif session[:current_role] == "Admin" %>
     <li class="nav-item">
-      <a class="nav-link" href="">
+      <a class="nav-link" href="<%= dashboard_organizations_path %>">
         <i class="fas fa-fw fa-folder"></i>
         <span>Organizaciones</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<%= dashboard_customers_path %>">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Clientes</span>
       </a>
     </li>
   <% end %>
