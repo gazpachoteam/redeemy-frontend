@@ -2,7 +2,7 @@
 <div class="container py-5 mt-5 ">
   <div class="row py-3 ">
   <div class="container text-center ">
-    <a href="<%= catalog_path %>" class="btn btn-dark btn-xl rounded-pill mt-3">Añade tu oferta</a>
+    <a href="<%= projects_path %>" class="btn btn-dark btn-xl rounded-pill mt-3">Añade tu oferta</a>
   </div>
   </div>
 <div class="album py-5 bg-light">
@@ -16,7 +16,7 @@
             <p class="card-text"><%=project["name"] %></p>
             <p class="card-text"><%=project["description"] %></p>
             <div class="d-flex justify-content-between align-items-center">
-              <a href="<%= project_path(project["id"]) %>" class="">Ver</a>            
+              <a href="<%= project_path(project["id"]) %>" class="">Ver</a>
               <small class="text-muted">Disponible hasta: <%= project["expiration"] %></small>
             </div>
           </div>

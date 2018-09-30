@@ -18,7 +18,6 @@ class UsersController < ApplicationController
       session[:auth_token] = @response.parsed_body['authentication_token']
       session[:user_id] = @response.parsed_body['user_id']
       #get the current roles and store them in the sessionx
-      byebug
       current_role!
       case session[:current_role]
       when "Customer"
@@ -42,6 +41,7 @@ class UsersController < ApplicationController
 
   def logout
     @response = User.logout(session, {})
+    redirect_to root_path
   ensure
     #Delete cached objects from this session
     token = session[:auth_token]
