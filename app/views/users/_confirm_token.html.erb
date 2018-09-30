@@ -1,0 +1,14 @@
+<h1>Great!</h1> <h3>We sent a code to <br> <%= @sent_by == "email" ? @login_handler : number_to_phone(@login_handler) %></h3>
+<%= form_tag '/sign_in', :id => 'authenticate_token' do %>
+  <%= hidden_field_tag :login_handler, nil, :value => @login_handler %>
+  <div class='form-group'>
+    <%= text_field_tag :code, nil, class: 'form-control input-lg', placeholder: 'Code',  :required => true, value:"#{params[:code]}", :id => 'input_trigger' %>
+  </div>
+  <%= button_tag(type: 'submit', id:'hidden_submit', class: 'btn btn-success btn-lg btn-block faded') do %>
+    Confirm
+  <% end %>
+<% end %>
+<div class='form-group'>
+  <br>
+  <a href='/sign_in?reset=true' class='btn btn-default btn-sm' id='back'><i class="fa fa-arrow-left" aria-hidden="true"></i> Start Over</a>
+</div>

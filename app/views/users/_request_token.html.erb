@@ -4,7 +4,7 @@
 <% end %>
 <p>Just enter your mobile phone number or email below. We'll send you a code so you can securely sign in.</p>
 
-<form action='/login' method='post' id='token_request'>
+<form action='/request_token' method='post' id='token_request'>
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <div class="form-group">
     <input type="text" class="form-control input-lg" placeholder="Mobile Number or Email" name='login_handler' id="input_trigger"></input>

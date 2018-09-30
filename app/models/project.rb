@@ -1,7 +1,7 @@
 class Project < Base
   def self.routes
     {
-      index: ['/providers/%d/projects', :get]
+      request_token: ['/request_token', :post]
     }
   end
 end

@@ -21,7 +21,7 @@ module CoreRequest
   private
 
   def jsonify_body(data)
-    data[:body] = JSON.dump(data[:body]) if data[:body]
+    data[:body] = JSON.dump(data[:body].to_h) if data[:body]
   end
 
   def insert_parsed_body(response, data)
