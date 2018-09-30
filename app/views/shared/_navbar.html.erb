@@ -9,12 +9,15 @@
         <li class="nav-item">
           <a class="nav-link" href="<%= projects_path %>">Projects</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= bank_dashboard_path %>">Bank Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= dashboard_for_provider_path(3) %>">Provider Dashboard</a>
-        </li>
+        <% if session[:current_role] %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= sign_out_user_path %>">Logout</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= sign_in_user_path %>">Login</a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
