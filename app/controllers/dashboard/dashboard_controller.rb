@@ -1,7 +1,12 @@
 class Dashboard::DashboardController < DashboardController
 
   def index
-    @response = Provider.index(session, {}, params[:provider_id])
-    @providers = @response.parsed_body
+    if has_role? "OrgAdmin"
+      @response = Organization.org_admin_index(session, {}, session[:user_id])
+      @organization = @response.parsed_body
+    elsif has_role? "Admin"
+      @response = Organization.index(session, {})
+      @organizations = @response.parsed_body
+    end
   end
 end
