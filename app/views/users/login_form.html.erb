@@ -1,0 +1,25 @@
+<div class='fullheight new-session-page py-5 mt-5'>
+  <div class='container'>
+    <div class='hidden-xs paddingtop'%></div>
+    <div class='col-lg-4 offset-lg-4 col-sm-8 offset-sm-2'>
+      <% if params[:note]  %>
+      <div class='well text-center'>
+        <h3><%= params[:note] %></h3>
+      </div>
+      <% end %>
+
+      <div class='panel panel-body animated flipInY'>
+        <% unless @login_handler %>
+          <%= render 'users/request_token' %>
+        <% else %>
+          <%= render 'users/confirm_token' %>
+        <% end %>
+      </div>
+
+      <% unless @login_handler %>
+          <%= render 'shared/why_phone_email_modal' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
