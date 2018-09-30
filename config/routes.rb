@@ -5,17 +5,9 @@ Rails.application.routes.draw do
   post '/sign_in' => 'users#login'
   get '/sign_out' => 'users#logout', as: :sign_out_user
 
-  get 'dashboard', to: "dashboard/dashboard#index", as: "bank_dashboard"
+  get 'dashboard', to: "dashboard/dashboard#index"
   namespace :dashboard do
-    resources :providers do
-    end
-  end
-
-  get 'provider_admin/:provider_id', to: "provider_admin/dashboard#index", as: "dashboard_for_provider"
-  namespace :provider_admin do
-    resources :providers do
-      resources :redemptions, only: [:index]
-      resources :projects, only: [:index]
+    resources :organizations do
     end
   end
 

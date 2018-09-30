@@ -22,8 +22,8 @@ class UsersController < ApplicationController
       case session[:current_role]
       when "Customer"
         redirect_to projects_path
-      when "Provider"
-        redirect_to dashboard_provider(session[:user_id])
+      when "OrgAdmin", "Admin"
+        redirect_to dashboard_path
       else
         redirect_to root_path
       end
