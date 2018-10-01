@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
   end
   def show
     @response = Project.show(session, {}, params[:id])
-    @project = @response.parsed_body   
+    @project = @response.parsed_body
+  end
+  def finance
+    @response = Project.show(session, {}, params[:id])
+    @project = @response.parsed_body
   end
 end
