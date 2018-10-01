@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:index, :show]
+  get '/finance/project/:id' => 'projects#finance', as: :finance_project
 
   root to: "pages#home"
 end
