@@ -1,0 +1,126 @@
+
+<script>
+
+// Tooltips Initialization
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+
+// Steppers
+$(document).ready(function () {
+var navListItems = $('div.setup-panel-2 div a'),
+        allWells = $('.setup-content-2'),
+        allNextBtn = $('.nextBtn-2'),
+        allPrevBtn = $('.prevBtn-2');
+
+allWells.hide();
+
+navListItems.click(function (e) {
+    e.preventDefault();
+    var $target = $($(this).attr('href')),
+            $item = $(this);
+
+    if (!$item.hasClass('disabled')) {
+        navListItems.removeClass('btn-amber').addClass('btn-blue-grey');
+        $item.addClass('btn-amber');
+        allWells.hide();
+        $target.show();
+        $target.find('input:eq(0)').focus();
+    }
+});
+
+allPrevBtn.click(function(){
+    var curStep = $(this).closest(".setup-content-2"),
+        curStepBtn = curStep.attr("id"),
+        prevStepSteps = $('div.setup-panel-2 div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+        prevStepSteps.removeAttr('disabled').trigger('click');
+});
+
+allNextBtn.click(function(){
+    var curStep = $(this).closest(".setup-content-2"),
+        curStepBtn = curStep.attr("id"),
+        nextStepSteps = $('div.setup-panel-2 div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+        curInputs = curStep.find("input[type='text'],input[type='url']"),
+        isValid = true;
+
+    $(".form-group").removeClass("has-error");
+    for(var i=0; i< curInputs.length; i++){
+        if (!curInputs[i].validity.valid){
+            isValid = false;
+            $(curInputs[i]).closest(".form-group").addClass("has-error");
+        }
+    }
+
+    if (isValid)
+        nextStepSteps.removeAttr('disabled').trigger('click');
+});
+
+$('div.setup-panel-2 div a.btn-amber').trigger('click');
+});
+
+</script>
+
+
+<div class="row justify-content-center" style="margin-top: 150px;">
+  <div class="col-7">
+
+    <!-- Stepper -->
+    <div class="steps-form-2">
+        <div class="steps-row-2 setup-panel-2 d-flex justify-content-between">
+            <div class="steps-step-2">
+                <a href="#step-1" type="button" class="up-btn btn btn-amber btn-circle-2 waves-effect ml-0" data-toggle="tooltip" data-placement="top" title="Proyecto a financiar"><i class="fa fas fa-pencil-alt"></i></a>
+            </div>
+            <div class="steps-step-2">
+                <a href="#step-2" type="button" class="up-btn btn btn-blue-grey btn-circle-2 waves-effect mr-0" data-toggle="tooltip" data-placement="top" title="Terminar"><i class="fa fa-check" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Step -->
+    <form role="form" action="" method="post">
+        <div class="row setup-content-2" id="step-1">
+          <div class="col-md-12">
+              <h3 class="font-weight-bold pl-0 my-4"><strong>Proyecto</strong></h3>
+              <div class="container">
+                <div class="card">
+                <div class="card-body row">
+                    <div class="col-sm-12 col-md-6" id="image-container">
+                          <div id="main-img">
+                            <img id="product-image" src="https://1.bp.blogspot.com/-fCJYZnIHYBo/WpEGyT8Bx2I/AAAAAAAAPME/a32q0EriMqgQO-is3YA-bb2yFjbBmJubgCLcBGAs/s1600/EN%2Brural%2BEl%2BPais.jpg">
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-md-6" id="product-information">
+                       <h4 class="p-0 m-0" id="product-title"><%= @project["name"] %></h4>
+                        <span id="product-short"><small><%= @project["description"] %></small></span>
+                       <div id="add-to-cart" class="mt-2">
+                           <labe>Puntos a financiar</labe>
+                           <input type="number" placeholder="0" id="add-to-cart-qty" min="0" max="999" value="0" style="margin-left: 40px; width: 40%;">
+                       </div>
+                    </div>
+
+                </div>
+            </div> <!-- end card -->
+          </div> <!-- end container-->
+          <div style="margin-top: 20px;">
+            <button class="btn btn-mdb-color btn-rounded nextBtn-2 float-right" type="button">Siguiente</button>
+          </div>
+
+          </div>
+        </div>
+
+    <!-- Second Step -->
+        <div class="row setup-content-2" id="step-2">
+          <div class="col-md-12">
+              <h3 class="font-weight-bold pl-0 my-4"><strong>Terminar</strong></h3>
+              <h2 class="text-center font-weight-bold my-4">¡Gracias!</h2>
+              <h2 class="text-center font-weight-bold my-4">Tu contribución es clave</h2>
+              <button class="btn btn-mdb-color btn-rounded prevBtn-2 float-left" type="button">Anterior</button>
+              <!-- <button class="btn btn-success btn-rounded float-right" type="submit">Completar</button>-->
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -6,7 +6,8 @@
       <% @projects.each do |project|%>
       <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-          <%= image_tag('market.jpg', class: 'card-img-top')%>
+          <% social_images = ["social.png", "social1.jpg", "social2.jpg", "social3.jpg", "social4.jpeg"] %>
+          <%= image_tag(social_images.sample, class: 'card-img-top')%>
           <div class="card-body">
             <h5><%=project["name"] %></h5>
             <p class="card-text text-truncate"><%=project["description"] %></p>
