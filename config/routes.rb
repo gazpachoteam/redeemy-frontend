@@ -7,8 +7,10 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: "dashboard/dashboard#index"
   namespace :dashboard do
-    resources :organizations do
-    end
+    resources :organizations
+    resources :projects
+    resources :redemptions
+    resources :customers
   end
 
   resources :projects, only: [:index, :show]
