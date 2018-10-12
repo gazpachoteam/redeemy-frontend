@@ -1,0 +1,52 @@
+
+/* ==========================================================================
+   13.0 Widget Section
+   ========================================================================== */
+.widget-section{
+    background-color: #111;
+    background-image: ;
+    background-position: right 150px center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.widget-content{}
+.widget-content img{
+    margin-bottom: 15px;
+}
+.widget-content p{
+    color: #999;
+}
+.widget-content h3{
+    color: #ddd;
+}
+.widget-content .social-icon li{
+    display: inline-block;
+    margin-right: 15px;
+}
+.widget-content .social-icon li a{
+    display: inline-block;
+    color: #f8b864;
+}
+.widget-content .social-icon li a:hover{
+    color: #fff;
+}
+.widget-content .widget-link li a{
+    color: #777;
+    margin-bottom: 16px;
+    display: block;
+}
+.widget-content .widget-link li a:hover{
+    color: #f8b864;
+    text-decoration: underline;
+}
+.widget-content .address li{
+    margin-bottom: 16px;
+    display: block;
+    font-family: "Roboto Slab", sans-serif;
+    color: #777;
+}
+.widget-content .address li i{
+    color: #f8b864;
+    margin-right: 10px;
+}

@@ -3,7 +3,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "header_section";
+@import "widget_section";
 @import "hero_section";
+@import "footer_section";
+@import "scroll-to-top";
+
 
 
 /*  ==========================================================================
@@ -12,7 +16,10 @@
 
     1.0 Common Styles
     2.0 Header Section
+    13.0 Widget Section
     14.0 Hero Section
+    21.0 Footer Section
+	  22.0 Scroll To Top
 
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700');
