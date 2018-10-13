@@ -1,0 +1,25 @@
+/* ==========================================================================
+   14.0 Hero Section
+   ========================================================================== */
+.hero-section{
+	background-image: image-url("hero-bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+    height: 530px;
+    display: flex;
+    align-items: center;
+}
+.hero-content h1{
+    font-size: 40px;
+    color: #fff;
+    display: inline-block;
+}
+.hero-content h4{
+    color: #f8b864;
+}
+.hero-content p{
+    color: #ddd;
+}

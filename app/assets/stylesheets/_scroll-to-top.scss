@@ -1,0 +1,23 @@
+
+/* ==========================================================================
+   22.0 Scroll To Top
+   ========================================================================== */
+#scroll-to-top{
+    background-color: #f8b864;
+    display: none;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 999;
+}
+#scroll-to-top:hover{
+    background-color: #ffb451;
+    color: #fff;
+}

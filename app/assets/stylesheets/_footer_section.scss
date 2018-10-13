@@ -1,0 +1,31 @@
+
+/* ==========================================================================
+   21.0 Footer Section
+   ========================================================================== */
+.footer-section{
+    display: block;
+    background-color: #111;
+    border-top: 1px solid #222;
+    padding: 30px 0;
+}
+.footer-section .copyright{
+    font-size: 12px;
+    color: #ddd;
+    text-transform: uppercase;
+}
+.footer-social{
+    display: block;
+    text-align: right;
+}
+.footer-social li{
+    display: inline-block;
+}
+.footer-social li a{
+    color: #ddd;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+.footer-social li a:hover{
+    color: #f8b864;
+}

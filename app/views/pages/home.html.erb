@@ -1,20 +1,16 @@
-<header class="masthead text-center text-white d-flex">
-  <div class="container my-auto">
-    <div class="row">
-      <div class="text-left col-lg-10 mx-auto">
-        <h2 class="">
-          <strong>Utiliza los puntos de tu tarjeta para financiar proyectos sociales</strong>
-        </h2>
-        <hr>
-      </div>
-      <div class="col-lg-10 mx-auto text-left">
-        <p class="text-faded mb-5">Queremos que con cada compra de los tarjetahabientes de Scotiabank colpatria se generen oportunidades para el tejido social de Colombia.</p>
-        <a class="btn btn-secondary btn-sm js-scroll-trigger" href="#informacion">Información</a>
-        <a class="btn btn-primary btn-sm js-scroll-trigger" href="<%= projects_path %>">Explorar proyectos</a>
-      </div>
+<div class="header-height"></div>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h4>Comparte tus puntos!!</h4>
+            <h2>Utiliza los puntos de tu tarjeta para financiar proyectos sociales</h2>
+            <p>Queremos que con cada compra de los tarjetahabientes de Scotiabank colpatria</br>se generen oportunidades para el tejido social de Colombia.</p>
+            <a href="<%= projects_path %>" class="default-btn">Explorar proyectos</a>
+        </div>
     </div>
-  </div>
-</header>
+</section><!-- /Hero Section -->
+
 
 <section id="informacion">
   <div class="container">
@@ -53,6 +49,37 @@
   </div>
 </section>
 
+<section class="promo-section-2 padding bd-bottom">
+
+       <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 xs-padding">
+                    <div class="promo-content">
+                        <%= image_tag 'icon-1.png' %>
+                        <h3>Consultar puntos</h3>
+                        <p>Consulta los puntos ganados con tu tarjeta de crédito.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 xs-padding">
+                    <div class="promo-content">
+                        <%= image_tag 'icon-2.png' %>
+                        <h3>Explorar proyectos</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 xs-padding">
+                    <div class="promo-content">
+                        <%= image_tag "icon-3.png", :class => "icon-icon" %>
+                        <h3>Become A Volunteer</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section><!-- /Promo Section -->
 <!--
 <header class="masthead text-center text-white completed">
   <div class="masthead-content">
