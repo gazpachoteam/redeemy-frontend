@@ -1,97 +1,12 @@
 <div class="header-height"></div>
 
 <section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <h4>Comparte tus puntos!!</h4>
-            <h2>Utiliza los puntos de tu tarjeta para financiar proyectos sociales</h2>
-            <p>Queremos que con cada compra de los tarjetahabientes de Scotiabank colpatria</br>se generen oportunidades para el tejido social de Colombia.</p>
-            <a href="<%= projects_path %>" class="default-btn">Explorar proyectos</a>
-        </div>
-    </div>
+  <%= render "pages/home/hero_section" %>
 </section><!-- /Hero Section -->
 
 
-<section id="informacion">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">financia proyectos sociales</h2>
-        <h4><em>en tres sencillos pasos</em></h4>
-        <hr class="my-4">
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
-          <i class="fas fa-4x fa-credit-card text-primary mb-3 sr-icon-1"></i>
-          <h3 class="mb-3">Consultar puntos</h3>
-          <p class="text-muted mb-0">Consulta los puntos ganados con tu tarjeta de crédito.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
-          <i class="fas fa-4x fa-list-alt text-primary mb-3 sr-icon-2"></i>
-          <h3 class="mb-3">Explorar proyectos</h3>
-          <p class="text-muted mb-0">Explora el catálogo de proyectos sociales más completo del tejido social colombiano.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 text-center">
-        <div class="service-box mt-5 mx-auto">
-          <i class="fas fa-4x fa-piggy-bank text-primary mb-3 sr-icon-3"></i>
-          <h3 class="mb-3">Financiar</h3>
-          <p class="text-muted mb-0">Financia los proyectos que más te gusten y contribuye al bienestar social de tu comunidad.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="promo-section-2 padding bd-bottom">
-
-       <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6 xs-padding">
-                    <div class="promo-content">
-                        <%= image_tag 'icon-1.png' %>
-                        <h3>Consultar puntos</h3>
-                        <p>Consulta los puntos ganados con tu tarjeta de crédito.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 xs-padding">
-                    <div class="promo-content">
-                        <%= image_tag 'icon-2.png' %>
-                        <h3>Explorar proyectos</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 xs-padding">
-                    <div class="promo-content">
-                        <%= image_tag "icon-3.png", :class => "icon-icon" %>
-                        <h3>Become A Volunteer</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <%= render "pages/home/promo_section_2" %>
 </section><!-- /Promo Section -->
-<!--
-<header class="masthead text-center text-white completed">
-  <div class="masthead-content">
-    <div class="container">
-      <h1 class="masthead-heading mb-0">Redeemy</h1>
-      <h3 class=" mb-0">Utiliza los puntos de tu tarjeta para financiar proyectos sociales</h3>
-      <a href="<%= projects_path %>" class="btn btn-dark btn-xl rounded-pill mt-5">Explorar Proyectos</a>
-    </div>
-  </div>
-  <div class="bg-circle-1 bg-circle"></div>
-  <div class="bg-circle-2 bg-circle"></div>
-  <div class="bg-circle-3 bg-circle"></div>
-  <div class="bg-circle-4 bg-circle"></div>
-</header>
--->
+
+<%= render "pages/home/projects" %>

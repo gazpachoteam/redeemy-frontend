@@ -3,6 +3,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "header_section";
+@import "causes_section";
 @import "widget_section";
 @import "hero_section";
 @import "footer_section";
@@ -17,6 +18,7 @@
 
     1.0 Common Styles
     2.0 Header Section
+    5.0 Causes Section
     13.0 Widget Section
     14.0 Hero Section
     21.0 Footer Section
@@ -342,4 +344,10 @@ z-index: -1;
 
 .icon-icon {
   position: center;
+}
+
+.context-img {
+  max-width: 100%;
+  height: 150px;
+  overflow: hidden;
 }

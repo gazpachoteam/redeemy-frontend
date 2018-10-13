@@ -4,19 +4,7 @@
           <div class="container">
               <div class="causes-wrap row">
                 <% @projects.each do |project|%>
-                <div class="col-md-4">
-                  <div class="card mb-4 box-shadow">
-                    <% social_images = ["social.png", "social1.jpg", "social2.jpg", "social3.jpg", "social4.jpeg"] %>
-                    <%= image_tag(social_images.sample, class: 'card-img-top')%>
-                    <div class="card-body">
-                      <h5><%=project["name"] %></h5>
-                      <p class="card-text text-truncate"><%=project["description"] %></p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <a href="<%= project_path(project["id"]) %>" class="">Ver</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <%= render "project_card", project: project %>
                 <%end%>
               </div>
             </div>
