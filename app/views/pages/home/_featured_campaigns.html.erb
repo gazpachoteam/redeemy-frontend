@@ -1,0 +1,29 @@
+<section class="campaigns-section bd-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 xs-padding">
+                <div class="campaigns-wrap">
+                    <h4>Proyecto destacado</h4>
+                    <h2><%= @featured_project["name"]%></h2>
+                    <p><%= @featured_project["description"]%></p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="wow cssanimation fadeInLeft">35%</span></div>
+                    </div>
+                    <div class="donation-box">
+                        <h3><i class="far fa-chart-bar"></i>Goal: $450000</h3>
+                        <h3><i class="far fa-thumbs-up"></i>Raised: $55000</h3>
+                    </div>
+                    <a href="<%= project_path(@featured_project['id']) %>" class="default-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="col-md-6 xs-padding">
+                <div class="video-wrap">
+                    <%= image_tag "video.jpg"%>
+                    <div class="play">
+                        <a class="img-popup" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=_IlLwfC2dNc"><i class="fas fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /Featured Campaigns Section -->
