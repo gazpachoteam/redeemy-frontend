@@ -20,6 +20,8 @@
 
 /*Charitify Theme Scripts */
 
+$(document).on('turbolinks:load', function() {
+
 (function($){
     "use strict";
 
@@ -247,3 +249,5 @@
 	});
 
 }) ();
+
+});

@@ -1,13 +1,9 @@
 <section class="causes-section bg-grey bd-bottom padding">
     <div class="container">
-      <section class="causes-section bg-grey bd-bottom padding">
-          <div class="container">
-              <div class="causes-wrap row">
-                <% @projects.each do |project|%>
-                  <%= render "project_card", project: project %>
-                <%end%>
-              </div>
-            </div>
-        </section>
+        <div class="causes-wrap row">
+          <% @projects.each do |project|%>
+            <%= render "project_card", project: project %>
+          <%end%>
+        </div>
       </div>
-</section>
+  </section>
