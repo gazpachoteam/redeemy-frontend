@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
     <p class="notice" style="position:absolute;"><%= notice %></p>
     <p class="alert" style="position:absolute;"><%= alert %></p>
-      <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="header-height"></div>
+    <%= yield %>
     <%= render "shared/footer" %>
-    
   </body>
 </html>

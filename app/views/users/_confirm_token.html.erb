@@ -4,7 +4,7 @@
   <div class='form-group'>
     <%= text_field_tag :code, nil, class: 'form-control input-lg', placeholder: 'Code',  :required => true, value:"#{params[:code]}", :id => 'input_trigger' %>
   </div>
-  <%= button_tag(type: 'submit', id:'hidden_submit', class: 'btn btn-success btn-lg btn-block faded') do %>
+  <%= button_tag(type: 'submit', id:'hidden_submit', class: 'btn default-btn btn-lg btn-block faded') do %>
     Confirm
   <% end %>
 <% end %>
