@@ -1,0 +1,40 @@
+/* ==========================================================================
+   4.0 Promo Section
+   ========================================================================== */
+.promo-section{
+    position: relative;
+    display: block;
+    margin-top: -80px;
+    min-height: 360px;
+}
+.promo-wrap{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+}
+.promo-wrap .row{
+    background-color: #fff;
+    padding: 40px 30px;
+    box-shadow: 0px 16px 28px 0px rgba(0, 0, 0, 0.15);
+}
+.promo-wrap .row .col-md-4:last-child > .promo-content{
+    border: none;
+}
+.promo-content{
+    border-right: 1px dashed #ddd;
+}
+.promo-content img{
+    margin-bottom: 15px;
+}
+.promo-content a{
+    color: #555;
+}
+.promo-content a:hover{
+    text-decoration: underline;
+    color: #f8b864;
+}
+.promo-section-2 .row .col-md-4:last-child > .promo-content{
+    border: none;
+}
