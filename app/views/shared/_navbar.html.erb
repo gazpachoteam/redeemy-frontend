@@ -33,7 +33,10 @@
                       <% if session[:current_role] %>
                       <li><a href="<%= sign_out_user_path %>">Logout</a>
                         <ul>
-                          <li><%= "Logged as: " + session[:current_role] %></li>
+                          <li><p><%= "Logged as: " + session[:current_role] %></p></li>
+                          <% if ["Admin", "OrgAdmin"].include? session[:current_role] %>
+                            <li><%= link_to "Dashboard", dashboard_index_path %></li>
+                          <% end %>
                         </ul>
                       </li>
                       <% else %>
