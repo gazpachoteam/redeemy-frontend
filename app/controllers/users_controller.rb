@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       when "Customer"
         redirect_to projects_path
       when "OrgAdmin", "Admin"
-        redirect_to dashboard_path
+        redirect_to dashboard_index_path
       else
         redirect_to root_path
       end

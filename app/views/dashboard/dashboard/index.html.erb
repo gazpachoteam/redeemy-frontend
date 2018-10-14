@@ -1,5 +1,0 @@
-<% if session[:current_role] == "OrgAdmin" %>
-  <%= render "org_admin_dashboard" %>
-<% elsif session[:current_role] == "Admin" %>
-  <%= render "admin_dashboard" %>
-<% end %>
