@@ -1,0 +1,16 @@
+<section class="causes-section bg-grey bd-bottom padding">
+    <div class="container">
+        <div class="section-heading text-center mb-40">
+            <h2>Proyectos</h2>
+            <span class="heading-border"></span>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> It has survived not only five centuries.</p>
+        </div><!-- /Section Heading -->
+        <div class="causes-wrap row">
+
+          <% @projects.each do |project|%>
+            <%= render "projects/project_card", project: project %>
+          <%end%>
+
+        </div>
+    </div>
+</section><!-- /Causes Section -->
