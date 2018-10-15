@@ -8,14 +8,11 @@
       </p>
     </div>
     <ul class='list-group'>
-      <a href='' class='list-group-item'>
-        Proyectos <span class='badge badge-secondary float-right'><%= 4 %></span>
+      <a href='<%= organization_projects_path(organization["id"]) %>' class='list-group-item'>
+        Proyectos <span class='badge badge-secondary float-right'><%= organization["nro_of_projects"] %></span>
       </a>
       <a href='' class='list-group-item'>
-        Redenciones <span class='badge badge-secondary float-right'><%= 4 %></span>
-      </a>
-      <a href='' class='list-group-item'>
-        Herramientas
+        Configuración & Herramientas
       </a>
     </ul>
   </div>

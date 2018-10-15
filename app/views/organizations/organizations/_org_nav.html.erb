@@ -1,0 +1,29 @@
+<div class="pager-header">
+    <div class="container">
+        <div class="page-content">
+          <div class="row">
+              <div class="col-sm-4 text-left">
+                <ul id="submenu" class="nav navbar-nav nav-menu">
+                  <% if session[:current_role] == "Admin" %>
+                    <li><i class="fa fa-arrow-left" aria-hidden="true"></i> <a href="<%= admin_dashboard_index_path(session[:user_id]) %>">Dashboard</a></li>
+                  <% end %>
+                  <% if session[:current_role] == "OrgAdmin" %>
+                    <li><i class="fa fa-arrow-left" aria-hidden="true"></i> <a href="<%= org_admin_dashboard_index_path(session[:user_id]) %>">Dashboard</a></li>
+                  <% end %>
+                  <li><%= organization["name"] %></li>
+                </ul>
+              </div>
+
+              <div class="col-sm-8 text-right">
+                  <ul id="submenu" class="nav navbar-nav nav-menu">
+                       <li>
+                         <a class="active" href="<%= organization_projects_path(organization["id"]) %>">Proyectos</a>
+                       </li>
+                       <li><a href="">Redenciones</a></li>
+                       <li><a href="">Suscriptores</a></li>
+                   </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
