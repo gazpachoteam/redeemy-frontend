@@ -1,0 +1,10 @@
+<section class="causes-section bg-grey bd-bottom padding">
+    <div class="container">
+      <h2>Organizaciones</h2>
+      <div class="row pt-4">
+        <% @organizations.each do |organization| %>
+          <%= render 'organizations/organizations/organization_card', :organization => organization %>
+        <% end %>
+      </div>
+    </div>
+</section>

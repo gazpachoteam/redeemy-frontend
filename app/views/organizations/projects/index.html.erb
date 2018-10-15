@@ -1,0 +1,21 @@
+<%= render "organizations/organizations/org_nav", organization: @organization %>
+<section class="causes-section bg-grey bd-bottom padding">
+  <div class="container">
+    <div class='col-md-10 col-md-offset-1 col-xs-11'>
+      <div class='row'>
+        <ul class="list-group w-100">
+          <% @projects.each do |project| %>
+            <li class="list-group-item">
+              <h3> <%= project["name"] %></h3>
+              <small><%= project["description"] %></small>
+              <div class="visible-xs" style="margin-top: 10px;">
+                <a href='<%= project_path(project["id"]) %>' class='btn btn-success btn-xs'>Preview</a>
+                <a href='' class='btn btn-danger btn-xs' style="margin-left:5px;">Edit</a>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
