@@ -1,0 +1,30 @@
+<%= render 'projects/project_nav', organization: @organization, project: @project %>
+<section class="causes-section bg-grey bd-bottom pt-4 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class='col-md-3'>
+        <div>
+          <h3>
+            <strong><%= @project["name"] %></strong>
+          </h3>
+        </div>
+        <div class='paddingbottom'>
+          <p>TODO: iconos del los objetivos de sostenibilidad</p>
+        </div>
+      </div>
+
+      <div class='col-md-8 offset-md-1'>
+        <ul class='list-group'>
+
+          <li class='list-group-item'>
+            <%= @project["description"] %>
+          </li>
+
+          <li class='list-group-item'>
+            Stats
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

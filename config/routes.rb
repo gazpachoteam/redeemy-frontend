@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :organizations, only: [:show], module: "organizations" do
-    resources :projects, only: [:index]
+    resources :projects, only: [:index, :show, :edit, :update]
   end
 
   resources :projects, only: [:index, :show]
