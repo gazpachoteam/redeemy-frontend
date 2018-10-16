@@ -1,0 +1,22 @@
+<div class="pager-header">
+    <div class="container">
+        <div class="page-content">
+          <div class="row">
+              <div class="col-sm-4 text-left">
+                <ul id="submenu" class="nav navbar-nav nav-menu">
+                  <li><i class="fa fa-arrow-left" aria-hidden="true"></i> <a href="<%= organization_projects_path(organization["id"]) %>">Organización</a></li>
+                </ul>
+              </div>
+
+              <div class="col-sm-8 text-right">
+                  <ul id="submenu" class="nav navbar-nav nav-menu">
+                       <li>
+                         <a class="<%= active_class?(organization_project_path(organization["id"], project["id"])) %>" href="<%= organization_project_path(organization["id"], project["id"]) %>">Proyecto</a>
+                       </li>
+                       <li><a class="<%= active_class?(edit_organization_project_path(organization["id"], project["id"])) %>" href="<%= edit_organization_project_path(organization["id"], project["id"]) %>">Edit</a></li>
+                   </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
