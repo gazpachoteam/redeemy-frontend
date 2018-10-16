@@ -1,9 +1,36 @@
 <section class="causes-section bg-grey bd-bottom padding">
-    <div class="container">
-        <div class="causes-wrap row">
-          <% @projects.each do |project|%>
-            <%= render "project_card", project: project %>
-          <%end%>
+    <div class="container"><div class="causes-wrap row">
+      <div class="row">
+        <div class="col-3 text-left">
+          <div class="row">
+            <ul class="list-group w-75">
+              <% @categories.each_with_index do |category, i|%>
+
+                <a href="#" class="list-group-item">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <%= image_tag(category['url_image'], width: '100', class:"image_category")%>
+                    </div>
+                    <div class="col-md-8 ml-1">
+                      <%= category['name'] %>
+                    </div>
+                  </div>
+                </a>
+
+              <%end%>
+            </ul>
+          </div>
+        </div>
+        <br/ >
+        <div class="col-9" >
+          <div class="causes-wrap row">
+            <% @projects.each do |project|%>
+              <div class="col-md-6 xs-padding mt-3">
+                <%= render "project_card", project: project %>
+              </div>
+            <%end%>
+          </div>
         </div>
       </div>
+    </div>
   </section>
