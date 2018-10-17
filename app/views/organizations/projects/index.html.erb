@@ -6,6 +6,9 @@
         <% @projects.each do |project| %>
           <%= render "projects/project", organization: @organization, project: project %>
         <% end %>
+        <div class='col-sm-4 text-center mt-4'>
+          <%= link_to "Crear proyecto", new_organization_project_path(@organization["id"]), class: "btn btn-success btn-xs" %>
+        </div>
       </div>
     </div>
   </div>
