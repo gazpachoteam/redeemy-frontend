@@ -1,0 +1,22 @@
+<div class="row w-75 ">
+<% if @search %>
+  <p>0 Found</p>
+  <form role='search'>
+    <%= hidden_field_tag 'clear', 'true' %>
+    <div class="input-group">
+      <span class="input-group-btn">
+      <button type="submit" class="btn btn-danger btn-block"><i class="fa fa-times" aria-hidden="true"></i> Clear Search</button>
+      </span>
+    </div>
+  </form>
+<% else %>
+<form id="project_search" role='search'>
+  <div class="input-group mb-3">
+      <%= text_field_tag :q, params[:q], class: 'form-control', placeholder:'proyectos...' %>
+    <div class="input-group-append">
+        <button class="btn btn-secondary" type="button">Buscar</button>
+      </div>
+  </div>
+</form>
+<% end %>
+</div>

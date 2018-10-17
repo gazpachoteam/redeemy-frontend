@@ -1,35 +1,58 @@
 <section class="causes-section bg-grey bd-bottom padding">
-    <div class="container"><div class="causes-wrap row">
-      <div class="row">
-        <div class="col-3 text-left">
-          <div class="row">
-            <ul class="list-group w-75">
-              <% @categories.each_with_index do |category, i|%>
+    <div class="container">
+      <div class="causes-wrap row">
 
-                <a href="#" class="list-group-item">
-                  <div class="row">
-                    <div class="col-md-2">
-                      <%= image_tag(category['url_image'], width: '100', class:"image_category")%>
-                    </div>
-                    <div class="col-md-8 ml-1">
-                      <%= category['name'] %>
-                    </div>
-                  </div>
-                </a>
-
-              <%end%>
-            </ul>
-          </div>
+      <div class="col-md-3 text-left">
+        <div class="mt-4 w-75">
+          <% if @category %>
+            <h2><strong><%= @category['name']%></strong></h2>
+            <p><small>Proyectos bajo este objetivo</small></p>
+          <% else %>
+            <h2>Proyectos</h2>
+            <p><small>Catálogo de proyectos</small></p>
+          <% end %>
         </div>
-        <br/ >
-        <div class="col-9" >
-          <div class="causes-wrap row">
+        <%= render 'search_form' %>
+        <div class="row">
+          <ul class="list-group w-75">
+            <% if @category %>
+              <a href="<%= projects_path %>" class="list-group-item text-center"><strong>Ir a Todos</strong></a>
+            <% end %>
+            <% @categories.each_with_index do |category, i|%>
+
+              <a href="<%= projects_path(category_id: category['id']) %>" class="list-group-item">
+                <div class="row">
+                  <div class="col-md-2">
+                    <%= image_tag(category['url_image'], width: '100', class:"image_category")%>
+                  </div>
+                  <div class="col-md-7 ml-1">
+                    <%= category['name'] %>
+                  </div>
+                  <div class="col-md-1">
+                    <span class="badge badge-secondary"><%= category['nro_of_projects'] %></span>
+                  </div>
+                </div>
+              </a>
+
+            <%end%>
+          </ul>
+        </div>
+      </div>
+      <br/ >
+      <div class="col-md-9" >
+        <div class="causes-wrap row">
+          <% if @projects.size.zero? %>
+            <div class="text-center w-100 pt-5 mt-5">
+              <h1><i class="fa fa-folder-open"></i></h1>
+              <h3>No hay proyectos bajo este objetivo</h3>
+            </div>
+          <% else %>
             <% @projects.each do |project|%>
               <div class="col-md-6 xs-padding mt-3">
                 <%= render "project_card", project: project %>
               </div>
-            <%end%>
-          </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
