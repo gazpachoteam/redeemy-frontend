@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show]
   get '/finance/project/:id' => 'projects#finance', as: :finance_project
 
+  resources :categories, only: [:index]
+
   root to: "pages#home"
 end
