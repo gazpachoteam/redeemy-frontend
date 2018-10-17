@@ -1,19 +1,23 @@
-<%= form_for 'project', url: form_url do |project_form| %>
+<%= form_for 'project', url: form_url, method: method do |project_form| %>
 
   <p class='lead'><strong>Basics</strong></p>
 
   <div class='form-group'>
-    <label>Program</label>
+    <label>Nombre</label>
     <%= project_form.text_field :name, class: 'form-control', :value => @project["name"], placeholder: 'Nombre del proyecto' %>
   </div>
 
   <div class='form-group'>
-    <label>Program</label>
+    <label>Descripción</label>
     <%= project_form.text_area :description, class: 'form-control', :value => @project["description"], placeholder: 'Descripción del proyecto' %>
   </div>
 
   <p class='lead'><strong>Objetivos de financiación</strong></p>
 
-  <%= submit_tag "Save Changes", class: "btn btn-primary btn-lg"%>
+  <% if method == :put %>
+    <%= submit_tag "Guardar cambios", class: "btn btn-primary btn-xs"%>
+  <% elsif method == :post %>
+      <%= submit_tag "Crear proyecto", class: "btn btn-primary btn-xs"%>
+  <% end %>
 
 <% end %>
