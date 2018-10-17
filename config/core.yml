@@ -19,7 +19,7 @@ test:
       - es
 
 production:
-  location: http://localhost:3000/api/v1
+  location: https://redeemy-api.herokuapp.com/api/v1
   languages:
     core:
       - en
