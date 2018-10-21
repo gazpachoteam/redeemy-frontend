@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
   end
 
+  resources :customers, module: "customers" do
+    resources :dashboard, only: [:index]
+  end
+
   resources :organizations, only: [:show], module: "organizations" do
     resources :projects, only: [:index, :show, :edit, :update, :new, :create]
   end
