@@ -250,4 +250,11 @@ $(document).on('turbolinks:load', function() {
 
 }) ();
 
+/*=========================================================================
+  Una selección para ti/ dashboard-customer
+=========================================================================*/
+  $('[data-spy="scroll"]').each(function(){
+    var $spy = $(this).scrollspy('refresh')
+  })
+
 });
