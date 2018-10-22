@@ -9,9 +9,9 @@ class Customers::DashboardController < ApplicationController
 
     @response = Customer.show(session, {}, session[:user_id])
     @customer = @response.parsed_body
-    
-    #@response = Customer.redemptions(session, {}, session[:user_id])
-    #@redemptions = @response.parsed_body
+
+    @response = Customer.redemptions(session, {}, session[:user_id])
+    @redemptions = @response.parsed_body
   end
 
 end

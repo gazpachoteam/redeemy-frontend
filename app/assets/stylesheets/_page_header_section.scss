@@ -2,21 +2,21 @@
    15.0 Page Header Section
    ========================================================================== */
 .pager-header{
-  background-color: #EEEEEE;
+  background-image: url(asset_path("page-header-bg.jpg"));
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
 	-webkit-background-size: cover;
 	background-size: cover;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
+   min-height: 300px;
+   display: flex;
+   align-items: center;
 }
 .pager-header h2{
-    color: #777;
+   color: #fff;
 }
 .pager-header p{
-    color: #777;
+   color: #ddd;
 }
 
 .pager-header .active {
@@ -43,7 +43,7 @@
     font-size: 12px;
 }
 #submenu li a:hover{
-    color: #f8b864;
+    color: #dc3545;
 }
 /*Dropdown */
 #submenu li ul{
@@ -86,7 +86,7 @@
     transition: color 0.3s ease 0s, padding 0.3s ease 0s;
 }
 #submenu li > ul > li:hover a{
-    color: #f8b864;
+    color: #dc3545;
 }
 #submenu li > ul ul{
     background-color: #fff;
@@ -106,4 +106,7 @@
 }
 #submenu li ul li li a:hover{
     color: #ffca3f !important;
+}
+.organization-team {
+  background-image: url(asset_path("redeemy-organizations.jpg"));
 }

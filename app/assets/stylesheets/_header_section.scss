@@ -18,7 +18,7 @@
 .header-height{ width: 100%; }
 /*Top Header*/
 .top-header{
-    background-color: #f8b864;
+    background-color: #dc3545;
     padding: 10px 0;
 }
 .top-content-wrap ul li{
@@ -39,7 +39,7 @@
 .top-content-wrap .right-info i{
     margin-right: -5px;
     background-color: #fff;
-    color: #f8b864;
+    color: #dc3545;
     height: 25px;
     width: 25px;
     line-height: 25px;
@@ -79,7 +79,7 @@
     font-size: 12px;
 }
 #mainmenu li a:hover{
-    color: #f8b864;
+    color: #dc3545
 }
 /*Dropdown */
 #mainmenu li ul{
@@ -122,7 +122,7 @@
     transition: color 0.3s ease 0s, padding 0.3s ease 0s;
 }
 #mainmenu li > ul > li:hover a{
-    color: #f8b864;
+    color: #dc3545;
 }
 #mainmenu li > ul ul{
     background-color: #fff;

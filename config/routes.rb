@@ -26,5 +26,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index]
 
+  get "organizations", to: "pages#organizations"
+  
   root to: "pages#home"
+  get 'about', to: "pages#about"
 end

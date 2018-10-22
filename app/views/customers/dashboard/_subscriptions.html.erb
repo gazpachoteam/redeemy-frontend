@@ -2,12 +2,12 @@
   <div class="col-md-10">
     <div class="list-group">
       <% @projects.each_with_index do |project, i|%>
-        <a href="<%= project_path(project['id'])%>" class="list-group-item list-group-item-action mb-2">
+        <a href="<%= project_path(project['id'])%>" class="list-group-item list-group-item-action mb-2 p-0">
           <div class="row h-100">
-            <div class="col-md-2 my-auto">
-              <h2><span class="circle_points_mini"><%= [2,5,7].sample %></span></h2>
+            <div class="col-md-3 points-div text-center d-flex align-items-center h-100">
+              <h2><span class="num"><%= [200,700,100].sample %></span></h2>
             </div>
-            <div class="col-md-10 text-left my-auto">
+            <div class="col-md-9 text-left my-auto">
               <%= project['name'] %>
             </div>
           </div>
