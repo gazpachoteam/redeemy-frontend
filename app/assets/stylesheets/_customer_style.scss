@@ -1,5 +1,20 @@
+
+span.circle_points {
+  background: #dc3545;
+  border-radius: 0.9em;
+  -moz-border-radius: 0.9em;
+  -webkit-border-radius: 0.9em;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 1.8em;
+  margin-right: 18px;
+  text-align: center;
+  width: 2em;
+}
 .points-div {
-  background: #f8b864;
+  background: #dc3545;
 }
 
 .num {
@@ -9,7 +24,7 @@
 
 
 span.circle_points_mini {
-  background: #f8b864;
+  background: #dc3545;
   border-radius: 0.7em;
   -moz-border-radius: 0.8em;
   -webkit-border-radius: 0.8em;

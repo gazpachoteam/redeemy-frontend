@@ -2,7 +2,7 @@
    7.0 Campaigns Section
    ========================================================================== */
 .campaigns-section{
-	background-image: image-url("featured-bg.jpg");
+	background-image: image-url("home-prev.jpg");
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
@@ -11,7 +11,7 @@
     padding: 150px 0;
 }
 .campaigns-wrap h4{
-    background-color: rgba(248, 184, 100, 0.8);
+    background-color: #db4957;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
@@ -39,14 +39,14 @@
     margin-bottom: 40px;
 }
 .campaigns-wrap .progress .progress-bar{
-    background-color: #f8b864;
+    background-color: #dc3545;
     position: relative;
     border-radius: 30px;
 }
 .campaigns-wrap .progress .progress-bar span{
     position: absolute;
     display: block;
-    background-color: #f8b864;
+    background-color: #dc3545;
     right: -2px;
     top: -10px;
     height: 30px;
@@ -64,7 +64,7 @@
     left: -10px;
     top: -10px;
     border-radius: 50%;
-    border: 10px solid rgba(248, 184, 100, 0.8);
+    border: 10px solid #db4957;
 }
 
 .campaigns-wrap .donation-box h3{
