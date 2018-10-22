@@ -1,0 +1,18 @@
+<div class="row justify-content-center py-3">
+  <div class="col-md-10">
+    <div class="list-group">
+      <% @projects.each_with_index do |project, i|%>
+        <a href="<%= project_path(project['id'])%>" class="list-group-item list-group-item-action mb-2">
+          <div class="row h-100">
+            <div class="col-md-2 my-auto">
+              <h2><span class="circle_points_mini"><%= [2,5,7].sample %></span></h2>
+            </div>
+            <div class="col-md-10 text-left my-auto">
+              <%= project['name'] %>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>
