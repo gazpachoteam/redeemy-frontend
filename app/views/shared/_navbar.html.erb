@@ -40,6 +40,9 @@
                           <% if session[:current_role] == "OrgAdmin" %>
                             <li><%= link_to "Dashboard", org_admin_dashboard_index_path(session[:user_id]) %></li>
                           <% end %>
+                          <% if session[:current_role] == "Customer" %>
+                            <li><%= link_to "Dashboard", customer_dashboard_index_path(session[:user_id]) %></li>
+                          <% end %>
                         </ul>
                       </li>
                       <% else %>

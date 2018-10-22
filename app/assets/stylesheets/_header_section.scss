@@ -1,0 +1,196 @@
+/* ==========================================================================
+   2.0 Header Section
+   ========================================================================== */
+.header-section{
+    position: absolute;
+    box-shadow: 5px -5px 5px 10px rgba(0, 0, 0, .10);
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.header-section.navbar-fixed-top{
+    position: fixed;
+}
+.header-section.navbar-fixed-top .top-header{
+    display: none;
+}
+.header-height{ width: 100%; }
+/*Top Header*/
+.top-header{
+    background-color: #dc3545;
+    padding: 10px 0;
+}
+.top-content-wrap ul li{
+    margin-right: 20px;
+    display: inline-block;
+}
+.top-content-wrap ul li a{
+    display: inline-block;
+    color: #fff;
+}
+.top-content-wrap ul li i{
+    color: #fff;
+    margin-right: 10px;
+}
+.top-content-wrap .right-info{
+    text-align: right;
+}
+.top-content-wrap .right-info i{
+    margin-right: -5px;
+    background-color: #fff;
+    color: #dc3545;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.top-content-wrap .right-info li:last-child{
+    margin-right: 0;
+}
+/*Bottom Header */
+.bottom-header{
+    background-color: #fff;
+    position: relative;
+}
+.bottom-content-wrap{
+    display: flex;
+    align-items: center;
+}
+#mainmenu{
+    display: inline-block;
+    margin-right: 20px;
+}
+#mainmenu li{
+    position: relative;
+    padding-left: 20px;
+    display: inline-block;
+    text-align: left;
+}
+#mainmenu li a{
+    color: #1f293d;
+    font-weight: 700;
+    padding: 30px 0;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 12px;
+}
+#mainmenu li a:hover{
+    color: #dc3545
+}
+/*Dropdown */
+#mainmenu li ul{
+    background-color: #fff;
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 140%;
+    visibility: hidden;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    z-index: 999;
+}
+#mainmenu li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    top: 100%;
+}
+#mainmenu li ul li{
+    border-bottom: 1px solid #eaeaea;
+    display: block;
+    position: relative;
+}
+#mainmenu li ul li:last-child{
+    border: none;
+}
+#mainmenu li ul li a{
+    line-height: 45px;
+    display: block;
+    padding: 0 15px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #777;
+    -webkit-transition: color 0.3s ease 0s, padding 0.3s ease 0s;
+    transition: color 0.3s ease 0s, padding 0.3s ease 0s;
+}
+#mainmenu li > ul > li:hover a{
+    color: #dc3545;
+}
+#mainmenu li > ul ul{
+    background-color: #fff;
+    left: 200px;
+}
+#mainmenu li > ul li:hover > ul li a{
+    color: #777;
+}
+#mainmenu li ul li:hover > ul{
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+#mainmenu li > ul li:hover > ul li > a:hover{
+    background-color: transparent;
+    color: #fff;
+}
+#mainmenu li ul li li a:hover{
+    color: #ffca3f !important;
+}
+
+/*Mobile Menu */
+.slicknav_menu {
+    background: none;
+    padding: 4px 0;
+    display:none;
+    z-index: 999;
+}
+.slicknav_nav {
+    background-color: #fff;
+}
+.js .slicknav_menu {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.slicknav_btn{
+    background-color: transparent;
+    margin: 13px 5px 14px;
+}
+.slicknav_nav .slicknav_row:hover,
+.slicknav_nav .slicknav_row,
+.slicknav_nav a,
+.slicknav_nav a:hover{
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+.slicknav_nav .slicknav_row,
+.slicknav_nav a {
+    padding: 10px 15px;
+    margin: 0;
+    color: #777;
+}
+.slicknav_nav a .caret{
+    display: none;
+}
+.slicknav_nav ul{
+    margin: 0;
+}
+.slicknav_nav ul li a{
+    padding-left: 30px;
+    font-size: 12px;
+}
+.slicknav_nav .slicknav_row:hover,
+.slicknav_nav a:hover{
+    background-color: transparent;
+    color: #333;
+}

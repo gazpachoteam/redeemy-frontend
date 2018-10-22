@@ -8,7 +8,9 @@
         <div class="causes-wrap row">
 
           <% @projects.each do |project|%>
-            <%= render "projects/project_card", project: project %>
+            <div class="col-md-4 xs-padding mt-3">
+              <%= render "projects/project_card", project: project %>
+            </div>
           <%end%>
 
         </div>

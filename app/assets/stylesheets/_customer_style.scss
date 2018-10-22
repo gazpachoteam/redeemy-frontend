@@ -1,0 +1,42 @@
+span.circle_points {
+  background: #dc3545;
+  border-radius: 0.9em;
+  -moz-border-radius: 0.9em;
+  -webkit-border-radius: 0.9em;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 1.8em;
+  margin-right: 18px;
+  text-align: center;
+  width: 2em;
+}
+
+span.circle_points .num {
+  font-size: 0.5em;
+}
+
+
+span.circle_points_mini {
+  background: #dc3545;
+  border-radius: 0.7em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.2em;
+  margin-right: 8px;
+  text-align: center;
+  width: 1.2em;
+}
+
+.smallBox{
+  width: 100%;
+  height: 205px;
+  overflow: auto;
+  padding-left: 10px;
+  position: relative;
+}
