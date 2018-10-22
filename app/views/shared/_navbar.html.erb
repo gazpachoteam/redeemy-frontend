@@ -30,7 +30,7 @@
                     <li class="active"> <a href="/">Inicio</a></li>
                     <li><a href="/organizations">Para organizaciones</a></li>
                     <li><a href="<%= projects_path %>">Proyectos</a></li>
-                    <li><a href="#">Sobre</a></li>
+                    <li><a href="<%= about_path %>">Nosotros</a></li>
                     <% if session[:current_role] %>
                     <li><a href="<%= sign_out_user_path %>">Logout</a>
                       <ul>

@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get "organizations", to: "pages#organizations"
   
   root to: "pages#home"
+  get 'about', to: "pages#about"
 end
