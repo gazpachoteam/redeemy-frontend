@@ -5,6 +5,10 @@ class PagesController < ApplicationController
     set_featured_project
   end
 
+  def about
+    
+  end
+
   private
 
   def set_projects
