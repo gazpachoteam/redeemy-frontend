@@ -2,7 +2,7 @@ class Redemption < Base
 
   def self.routes
     {
-      index: ['/providers/%d/redemptions', :get]
+      index: ['/redemptions', :get]
     }
   end
 
