@@ -4,7 +4,7 @@ class Customer < Base
     {
       index: ['/customers', :get],
       show: ['/customers/%d', :get],
-      redemtions: ['/customers/%d/redemptions', :get]
+      redemptions: ['/customers/%d/redemptions', :get]
     }
   end
 
