@@ -27,11 +27,11 @@
               </div>
              <div class="col-sm-8 text-right">
                  <ul id="mainmenu" class="nav navbar-nav nav-menu">
-                      <li class="active"> <a href="/">Home</a></li>
-                      <li><a href="<%= projects_path %>">Projects</a></li>
-                      <li><a href="#">About</a></li>
+                      <li class="active"> <a href="/">Principal</a></li>
+                      <li><a href="<%= projects_path %>">Proyectos</a></li>
+                      <li><a href="#">Acerca de</a></li>
                       <% if session[:current_role] %>
-                      <li><a href="<%= sign_out_user_path %>">Logout</a>
+                      <li><a href="<%= sign_out_user_path %>">Salir</a>
                         <ul>
                           <li><p><%= "Logged as: " + session[:current_role] %></p></li>
                           <% if session[:current_role] == "Admin" %>
@@ -43,10 +43,10 @@
                         </ul>
                       </li>
                       <% else %>
-                      <li><a href="<%= sign_in_user_path %>">Login</a></li>
+                      <li><a href="<%= sign_in_user_path %>">Ingresar</a></li>
                       <% end %>
                   </ul>
-                  <a href="<%= projects_path %>" class="default-btn">Donet Now</a>
+                  <a href="<%= projects_path %>" class="default-btn">Done Ahora</a>
              </div>
           </div>
       </div>
