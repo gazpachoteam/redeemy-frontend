@@ -1,0 +1,63 @@
+.fourhundred {
+  min-height: 375px;
+}
+
+.fivehundred {
+  min-height: 475px;
+}
+
+.threehundredscroll {
+  height: 275px;
+  overflow-x: scroll;
+}
+
+.twohundredscroll {
+  height: 175px;
+  overflow-x: scroll;
+}
+
+.twohundred {
+  height: 200px;
+}
+
+.threehundred {
+  min-height: 275px;
+}
+
+.onefifty {
+  min-height: 150px;
+}
+
+.fullheight {
+  min-height: calc(100vh - 0px);
+}
+
+.cover {
+  min-height: 100vh;
+}
+
+.halfcover {
+  min-height: 50vh;
+}
+
+.coverdesktop {
+  min-height: 100vh;
+}
+
+.thumb {
+  display: inline-block;
+}
+
+.herodiv {
+  height: 50vh;
+}
+
+@media (max-width: 800px) {
+  .coverdesktop {
+    min-height: 33vh;
+  }
+
+  .herodiv {
+    height: 50vh;
+  }
+}
