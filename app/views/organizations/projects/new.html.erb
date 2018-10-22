@@ -1,0 +1,12 @@
+<%= render "organizations/organizations/org_nav", organization: @organization %>
+<section class="causes-section bg-grey bd-bottom pt-4 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class='col-md-8 offset-md-2'>
+        <div class='card card-body'>
+          <%= render 'form', project: @project, form_url: organization_projects_path(@organization["id"]), method: :post %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

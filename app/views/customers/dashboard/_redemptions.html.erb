@@ -1,0 +1,29 @@
+<div class="row justify-content-center py-2">
+  <div class="col-md-10">
+    <div class="list-group">
+      <% if @redemptions.size.zero? %>
+      <div class="text-center w-100 mt-2">
+        <h1><i class="fas fa-donate"></i></h1>
+        <h3>Sin donaciones / redenciones realizadas</h3>
+        <h2>¡Anímate a donar tus puntos!</h2>
+        <a href="<%= projects_path %>" class="default-btn">Explorar proyectos</a>
+      </div>
+      <% else %>
+        <% @redemptions.each do |redemption|%>
+          <a href="<%= project_path(redemption['project']['id'])%>" class="list-group-item list-group-item-action mb-2 p-0">
+            <div class="row justify-content-center">
+
+              <div class="col-md-2 points-div text-center">
+                <h2><span class="num"><%= redemption['points'] %></span></h2>
+              </div>
+
+              <div class="col-md-10">
+                <%= redemption['project']['name'] %>
+              </div>
+            </div>
+          </a>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

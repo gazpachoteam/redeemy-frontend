@@ -1,0 +1,17 @@
+<div class='col-sm-4 mt-4 halfpaddingtop'>
+  <a href='<%= organization_project_path(organization["id"], project["id"]) %>' class='card'  title="<%= project["name"] %>">
+
+    <ul class='list-group'>
+      <li class='list-group-item'>
+        <%= project["name"] %>
+      </li>
+
+      <li class='list-group-item'>
+        <small>Última redención <span class='float-right'>Unknown</span></small>
+      </li>
+      <li class='list-group-item'>
+        <strong>Objetivo mensual <span class='float-right'>50%</span></strong>
+      </li>
+    </ul>
+  </a>
+</div>

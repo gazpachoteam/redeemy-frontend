@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs px-3 py-3" id="myTab" role="tablist">
+  <% @projects.each_with_index do |project, i| %>
+  <li class="nav-item">
+    <a class="nav-link <%= i == 0 ? 'active' : ' ' %>" id="home_<%= i %>-tab" data-toggle="tab" href="#home_<%= i %>" role="tab" aria-controls="home_<%= i %>" aria-selected="<%= i == 0 ? 'true' : 'false' %>"><%= project['categories'][0].present? ? project['categories'][0]['name'] : 'General' %></a>
+  </li>
+  <% end %>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <% @projects.each_with_index do |project, i| %>
+  <div class="tab-pane fade <%= i == 0 ? 'show active' : ' ' %>" id="home_<%= i %>" role="tabpanel" aria-labelledby="home_<%= i %>-tab">
+      <div class="row justify-content-center">
+        <div class="col-md-10 xs-padding mt-3">
+          <%= render 'projects/project_card', project: project %>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
