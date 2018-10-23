@@ -16,8 +16,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require_tree .
 //= require_self
+//= require_tree .
 
 
 $(document).on('turbolinks:load', function() {
@@ -91,6 +91,7 @@ $(document).on('turbolinks:load', function() {
 /*=========================================================================
     Event Carousel
 =========================================================================*/
+/*
     $('#event-carousel').owlCarousel({
         loop: true,
         margin: 15,
@@ -114,7 +115,7 @@ $(document).on('turbolinks:load', function() {
             }
         }
     });
-
+*/
 /*=========================================================================
     Isotope Active
 =========================================================================*/
@@ -153,6 +154,7 @@ $(document).on('turbolinks:load', function() {
 /*=========================================================================
     Testimonial Carousel
 =========================================================================*/
+/*
 	$('#testimonial-carousel').owlCarousel({
         loop: true,
         margin: 15,
@@ -180,6 +182,7 @@ $(document).on('turbolinks:load', function() {
 /*=========================================================================
         Sponsor Carousel
 =========================================================================*/
+/*
     $('#sponsor-carousel').owlCarousel({
         loop: true,
         margin: 40,
@@ -202,7 +205,7 @@ $(document).on('turbolinks:load', function() {
             }
         }
     });
-
+*/
 /*=========================================================================
         Active venobox
 =========================================================================*/
