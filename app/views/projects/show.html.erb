@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-12" style="margin-top: 10px;">
                                 <p><i class="fas fa-signal" style="margin-right: 5px;"></i>$450000</p>
-                                <span>Meta</span>
+                                <span>Objetivo</span>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                             <li>
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1y4YhGxESKLpseca3RbB83YuPK7_mebhQ9pouhNr-sp2rNyPUA" alt="">
                                 <div>
-                                    <h4><a href="#">Inclusin de person</a></h4>
+                                    <h4><a href="#">Inclusión de person</a></h4>
                                     <span class="date"><i class="fa fa-clock-o"></i> Enero 01.2018</span>
                                 </div>
                             </li>
@@ -134,15 +134,17 @@
                     <img src="https://1.bp.blogspot.com/-fCJYZnIHYBo/WpEGyT8Bx2I/AAAAAAAAPME/a32q0EriMqgQO-is3YA-bb2yFjbBmJubgCLcBGAs/s1600/EN%2Brural%2BEl%2BPais.jpg" alt="" width="834" height="556">
 
                     <h2  id="hello"><%=@project["name"] %></h2>
-                    <div class="meta-info">
+                    <div class="meta-info w-100">
                         <span>
-                            <i class="fas fa-user"></i> Escrito por <a href="#">Manuel Escalona</a>
+                            <i class="fas fa-users"></i><a href="#"> <%=@project["organization"]["name"] %></a>
                         </span>
                         <span>
-                            <i class="fas fa-tag"></i> Etiquetado por <a href="#">Hambre Cero</a>
+                            <i class="fas fa-tag"></i><a href="#"> <%=@project["categories"][0]["name"] %></a>
                         </span>
                     </div><!-- Meta Info -->
-                    <p><%= @project["description"] %></p>
+                    <div class="w-100">
+                      <p><%= @project["description"] %></p>
+                    </div>
 
                     <div class="share-wrap">
                         <h4>Comparte este artículo</h4>
