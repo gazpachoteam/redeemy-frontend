@@ -4,7 +4,6 @@
    ========================================================================== */
 .widget-section{
     background-color: #111;
-    background-image: image-url("map.png");
     background-position: right 150px center;
     background-repeat: no-repeat;
     width: 100%;
@@ -40,6 +39,12 @@
     color: #dc3545;
     text-decoration: underline;
 }
+
+.widget-content .widget-link li i{
+  color: #dc3545;
+  margin-right: 10px;
+}
+
 .widget-content .address li{
     margin-bottom: 16px;
     display: block;

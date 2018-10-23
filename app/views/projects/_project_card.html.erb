@@ -4,7 +4,7 @@
         <div class="context-img">
           <%= image_tag(social_images.sample, class: 'card-img-top')%>
         </div>
-        <a href="<%= project_path(project['id']) %>" class="donate-btn">Donate Now<i class="ti-plus"></i></a>
+        <a href="<%= project_path(project['id']) %>" class="donate-btn">Donar / redimir<i class="fas fa-plus"></i></a>
         <div class="progress">
             <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="wow cssanimation fadeInLeft">25%</span></div>
         </div>
@@ -13,9 +13,9 @@
         <h4><%= project["name"] %></h4>
         <p class="d-inline-block"  ><%=project["description"].truncate(60, separator: " ") %></p>
         <div class="donation-box">
-            <p><i class="ti-bar-chart"></i>Goal: $450000</p>
-            <p><i class="ti-thumb-up"></i>Raised: $55000</p>
+            <p><i class="far fa-chart-bar"></i>Objetivo: $450000</p>
+            <p><i class="far fa-thumbs-up"></i>Alcanzado: $55000</p>
         </div>
-        <a href="<%= project_path(project['id']) %>" class="read-more">Read More</a>
+        <a href="<%= project_path(project['id']) %>" class="read-more">Leer más</a>
     </div>
 </div>
