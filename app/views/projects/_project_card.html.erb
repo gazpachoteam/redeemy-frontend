@@ -1,8 +1,7 @@
 <div class="causes-content">
    <div class="causes-thumb">
-        <% social_images = ["social.png", "social1.jpg", "social2.jpg", "social3.jpg"] %>
         <div class="context-img">
-          <%= image_tag(social_images.sample, class: 'card-img-top')%>
+          <%= image_tag(project['pictures'][0]['url_image'], class: 'card-img-top') %>
         </div>
         <a href="<%= project_path(project['id']) %>" class="donate-btn">Donar / redimir<i class="fas fa-plus"></i></a>
         <div class="progress">
