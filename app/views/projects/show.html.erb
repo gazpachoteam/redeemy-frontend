@@ -131,8 +131,7 @@
             </div>
             <div class="col-lg-9 sm-padding">
                 <div class="blog-items single-post row">
-                    <img src="https://1.bp.blogspot.com/-fCJYZnIHYBo/WpEGyT8Bx2I/AAAAAAAAPME/a32q0EriMqgQO-is3YA-bb2yFjbBmJubgCLcBGAs/s1600/EN%2Brural%2BEl%2BPais.jpg" alt="" width="834" height="556">
-
+                    <%= image_tag( @project['pictures'][0]['url_image'], width: "834" , height:"556")%>
                     <h2  id="hello"><%=@project["name"] %></h2>
                     <div class="meta-info w-100">
                         <span>
